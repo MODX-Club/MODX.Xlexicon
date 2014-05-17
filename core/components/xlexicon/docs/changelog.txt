@@ -1,0 +1,13 @@
+Changelog file for Xlexicon component.
+
+Xlexicon 2.1.2
+========================
+Fixed: Critical bug affecting data output in web/dictionary/getfield processor
+
+Xlexicon 2.1.3
+========================
+Fixed: Dictionary recieving error during creating new resource.
+
+Xlexicon 2.1.4
+========================
+Fixed: Bug during new resource creation.
