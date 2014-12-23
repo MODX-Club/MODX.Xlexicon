@@ -42,5 +42,9 @@ unset($root);
 require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
 require_once $sources['includes'] . 'functions.php';
 
-$modx= new modX();
+$config_options = array(
+    'delete_exclude_items' => array('.', '..','.svn','.svn/','.svn\\','.git','.git/','.git\\')
+);
+
+$modx= new modX('',$config_options);
 $modx->initialize('mgr');
