@@ -13,7 +13,7 @@ switch ($modx->event->name) {
       Xlexicon.config = '.$modx->toJSON($modx->Xlexicon->publicConfig).';
       Xlexicon.resource = '.$modx->toJSON($_GET).';
       
-	  </script>');
+      </script>');
 	break;
   
   case 'OnBeforeDocFormSave':
@@ -35,16 +35,26 @@ switch ($modx->event->name) {
   
   case 'OnDocFormSave':
     //cleanup to be out of jsondecode error on parsing updateresource response
-    $resource->set('xlexicon','');
+    foreach($scriptProperties as $resource){
+        if(is_object($resource)){
+            $resource->set('xlexicon','');
+            
+            foreach($resource->Dictionary as $Dictionary){
+                $resource->set("xlexicon[{$Dictionary->language}][id]", $Dictionary->id);
+            }
+            
+            break;
+        }
+    }
   break;
     
 	case 'OnHandleRequest':
 		if ($modx->context->key == 'mgr') break;
     
-    $ck = $modx->Xlexicon->sanitizeCultureKey(false);
-    
-    $modx->setPlaceholders(array('cultureKey'=>$ck),'+');
-    $modx->setOption('cache_prefix', "xlexicon_resource_{$ck}");
+        $ck = $modx->Xlexicon->sanitizeCultureKey(false);
+        
+        $modx->setPlaceholders(array('cultureKey'=>$ck),'+');
+        $modx->setOption('cache_prefix', "xlexicon_resource_{$ck}");
 	break;
 
   case 'OnLoadWebDocument':
