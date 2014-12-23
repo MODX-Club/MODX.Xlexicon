@@ -1,5 +1,9 @@
 Changelog file for Xlexicon component.
 
+Xlexicon 2.1.5
+========================
+Fixed: ‘Duplicate entry’ error
+
 Xlexicon 2.1.2
 ========================
 Fixed: Critical bug affecting data output in web/dictionary/getfield processor
