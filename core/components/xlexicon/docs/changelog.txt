@@ -1,12 +1,20 @@
 Changelog file for Xlexicon component.
 
+Xlexicon 2.1.7
+========================
+Package uninstall improvements.
+
+Xlexicon 2.1.6
+========================
+Fixed: Xlexicon connector setting remove on package uninstall.
+
 Xlexicon 2.1.5
 ========================
-Fixed: ‘Duplicate entry’ error
+Fixed: ‘Duplicate entry’ error.
 
 Xlexicon 2.1.2
 ========================
-Fixed: Critical bug affecting data output in web/dictionary/getfield processor
+Fixed: Critical bug affecting data output in web/dictionary/getfield processor.
 
 Xlexicon 2.1.3
 ========================

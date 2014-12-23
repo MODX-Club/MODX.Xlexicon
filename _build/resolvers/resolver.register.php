@@ -20,8 +20,12 @@ if ($object->xpdo) {
         
     case xPDOTransport::ACTION_UNINSTALL:
       if ($modx instanceof modX) {
-        $modx->removeExtensionPackage($pkgName);
+        $modx->removeExtensionPackage($pkgName);  
+        
+        $ns = $modx->getObject('modNamespace',array('name'=>$pkgLowerName));
+        if($ns) $ns->remove();
       }
+      
       break;
   }
 }
