@@ -54,7 +54,10 @@ switch ($modx->event->name) {
         $ck = $modx->Xlexicon->sanitizeCultureKey(false);
         
         $modx->setPlaceholders(array('cultureKey'=>$ck),'+');
-        $modx->setOption('cache_prefix', "xlexicon_resource_{$ck}");
+        
+        $cache_prefix = $modx->getOption('cache_prefix');
+        $cache_prefix .= "_{$ck}";
+        $modx->setOption('cache_prefix', $cache_prefix);
 	break;
 
   case 'OnLoadWebDocument':
