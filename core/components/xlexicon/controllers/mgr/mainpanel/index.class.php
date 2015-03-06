@@ -8,6 +8,10 @@ class ControllersMgrMainpanelManagerController extends XlexiconManagerController
     return new $className($modx, $config);
   }
   
+    public static function getInstanceDeprecated(modX &$modx, $className, array $config = array()) {
+        return self::getInstance($modx, $className, $config);
+    }
+  
   public function getTemplateFile() {
     return 'mainpanel/index.tpl';
   }   
